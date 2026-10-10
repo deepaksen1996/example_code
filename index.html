@@ -3,35 +3,166 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Wedding Invitation</title>
+    <title>Raja & Asmita - Wedding Invitation</title>
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;700&family=Noto+Sans+Devanagari:wght@400;700&family=Great+Vibes&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
 </head>
-<body>
-    <div class="container">
-        <header class="header">
-            <h1>You're Invited!</h1>
-            <h2>To the wedding of</h2>
-            <h1 class="names">Alex & Taylor</h1>
+<body class="lang-en">
+
+    <!-- Digital Envelope Overlay -->
+    <div id="envelope-overlay" class="envelope-overlay">
+        <div class="envelope" id="envelope">
+            <div class="envelope-flap" id="envelope-flap"></div>
+            <div class="envelope-paper">
+                <h2 class="en">Raja & Asmita</h2>
+                <h2 class="hi">राजा और अस्मिता</h2>
+                <p class="en">Click to Open</p>
+                <p class="hi">खोलने के लिए क्लिक करें</p>
+            </div>
+            <div class="envelope-front"></div>
+        </div>
+    </div>
+
+    <!-- Audio Player (Hidden) -->
+    <audio id="bg-music" loop>
+        <source src="https://www.soundhelix.com/examples/mp3/SoundHelix-Song-1.mp3" type="audio/mpeg">
+        Your browser does not support the audio element.
+    </audio>
+
+    <!-- Language Toggle Button -->
+    <button id="lang-toggle" class="lang-toggle">अ/A (Hindi/English)</button>
+
+    <!-- Main Content -->
+    <div class="container" id="main-content">
+        
+        <!-- Hero Section -->
+        <header class="hero">
+            <h3 class="en">We Are Getting Married!</h3>
+            <h3 class="hi">हम शादी कर रहे हैं!</h3>
+            
+            <!-- We will use a placeholder anime image as requested -->
+            <div class="anime-couple-container">
+                <img src="https://api.dicebear.com/7.x/adventurer/svg?seed=RajaAsmita&flip=true" alt="Anime Couple" class="anime-couple">
+            </div>
+
+            <h1 class="names">
+                <span class="en">Raja & Asmita</span>
+                <span class="hi">राजा और अस्मिता</span>
+            </h1>
+            <p class="date">
+                <span class="en">November 21, 2026</span>
+                <span class="hi">21 नवंबर 2026</span>
+            </p>
         </header>
 
-        <section class="details">
-            <div class="date-time">
-                <h3>When</h3>
-                <p>Saturday, October 24th, 2026</p>
-                <p>4:00 PM</p>
-            </div>
-            <div class="location">
-                <h3>Where</h3>
-                <p>The Grand Garden</p>
-                <p>123 Beautiful Lane, City, State</p>
+        <!-- Countdown Timer -->
+        <section class="countdown-section">
+            <h3 class="en">Countdown to Pheras</h3>
+            <h3 class="hi">फेरों की उलटी गिनती</h3>
+            <div id="countdown" class="countdown">
+                <div class="time-box"><span id="days">00</span><p class="en">Days</p><p class="hi">दिन</p></div>
+                <div class="time-box"><span id="hours">00</span><p class="en">Hours</p><p class="hi">घंटे</p></div>
+                <div class="time-box"><span id="mins">00</span><p class="en">Mins</p><p class="hi">मिनट</p></div>
+                <div class="time-box"><span id="secs">00</span><p class="en">Secs</p><p class="hi">सेकंड</p></div>
             </div>
         </section>
 
-        <section class="rsvp">
-            <h3>RSVP</h3>
-            <p>Please let us know if you can make it by September 15th, 2026.</p>
-            <button class="rsvp-btn">RSVP Now</button>
+        <!-- Itinerary Section -->
+        <section class="itinerary">
+            <h2 class="en section-title">Wedding Itinerary</h2>
+            <h2 class="hi section-title">विवाह कार्यक्रम</h2>
+
+            <div class="timeline">
+                <!-- Udaipur Events -->
+                <div class="event-day">
+                    <h3 class="en">November 20th - Udaipur</h3>
+                    <h3 class="hi">20 नवंबर - उदयपुर</h3>
+                    
+                    <div class="event">
+                        <h4><span class="en">Haldi & Mehendi</span><span class="hi">हल्दी और मेहंदी</span></h4>
+                        <p>11:00 AM - 2:00 PM</p>
+                    </div>
+                    <div class="event">
+                        <h4><span class="en">Mahila Sangeet</span><span class="hi">महिला संगीत</span></h4>
+                        <p>7:30 PM - 12:00 AM</p>
+                    </div>
+                    <div class="event">
+                        <h4><span class="en">Var Nikasi & Bus Departure</span><span class="hi">वर निकासी और बस प्रस्थान</span></h4>
+                        <p class="en">Var Nikasi at 10:30 PM, dancing towards the bus. Bus leaves for Ajmer at 11:30 PM.</p>
+                        <p class="hi">रात 10:30 बजे वर निकासी, बस की ओर प्रस्थान। रात 11:30 बजे अजमेर के लिए बस रवाना।</p>
+                    </div>
+                </div>
+
+                <!-- Ajmer Events -->
+                <div class="event-day">
+                    <h3 class="en">November 21st - Ajmer</h3>
+                    <h3 class="hi">21 नवंबर - अजमेर</h3>
+
+                    <div class="event">
+                        <h4><span class="en">Arrival in Ajmer</span><span class="hi">अजमेर आगमन</span></h4>
+                        <p>9:00 AM</p>
+                    </div>
+                    <div class="event">
+                        <h4><span class="en">Pheras (Wedding Ceremony)</span><span class="hi">फेरे (विवाह समारोह)</span></h4>
+                        <p>9:00 PM</p>
+                        <p class="venue-name">Shree Garden</p>
+                        <a href="https://share.google/3zpq3tdkB9fPwOTLx" target="_blank" class="map-link">
+                            <span class="en">View on Maps</span><span class="hi">मैप पर देखें</span>
+                        </a>
+                    </div>
+                </div>
+            </div>
         </section>
+
+        <!-- RSVP Form Section -->
+        <section class="rsvp-section">
+            <h2 class="en section-title">RSVP</h2>
+            <h2 class="hi section-title">उपस्थिति की पुष्टि (RSVP)</h2>
+            <p class="en">Please let us know if you can join us.</p>
+            <p class="hi">कृपया हमें बताएं कि क्या आप शामिल हो सकते हैं।</p>
+
+            <div id="rsvp-response" class="rsvp-response" style="display:none;"></div>
+
+            <form id="rsvp-form" class="rsvp-form">
+                <input type="text" id="guest-name" placeholder="Name / नाम" required>
+                
+                <select id="attendance" required>
+                    <option value="" disabled selected class="en">Will you attend?</option>
+                    <option value="" disabled selected class="hi">क्या आप शामिल होंगे?</option>
+                    <option value="yes">Yes, I will be there / हाँ, मैं आऊंगा</option>
+                    <option value="no">Sorry, I can't make it / क्षमा करें, मैं नहीं आ सकता</option>
+                </select>
+
+                <div id="destination-wrapper" style="display:none;">
+                    <label class="en">Where will you join us?</label>
+                    <label class="hi">आप हमारे साथ कहाँ शामिल होंगे?</label>
+                    <select id="rsvp-destination">
+                        <option value="" disabled selected>Select City / शहर चुनें</option>
+                        <option value="udaipur">Udaipur (Nov 20)</option>
+                        <option value="ajmer">Ajmer (Nov 21)</option>
+                        <option value="both">Both (Nov 20 & 21)</option>
+                    </select>
+                </div>
+
+                <div id="travel-details" style="display:none;">
+                    <p class="en" style="font-size: 0.9em; margin-bottom: 5px;">Optional Travel Details for Hotel Booking:</p>
+                    <p class="hi" style="font-size: 0.9em; margin-bottom: 5px;">होटल बुकिंग के लिए वैकल्पिक यात्रा विवरण:</p>
+                    <input type="text" id="travel-from" placeholder="Travelling From (e.g. Jaipur Airport) / कहाँ से">
+                    <input type="text" id="travel-to" placeholder="Travelling To (e.g. Ajmer) / कहाँ तक">
+                    <input type="text" id="travel-time" placeholder="Arrival Time / पहुँचने का समय">
+                </div>
+
+                <button type="submit" class="submit-btn">
+                    <span class="en">Submit RSVP</span>
+                    <span class="hi">जमा करें</span>
+                </button>
+            </form>
+        </section>
+
     </div>
+
+    <!-- Confetti Library -->
+    <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.6.0/dist/confetti.browser.min.js"></script>
+    <script src="script.js"></script>
 </body>
 </html>
