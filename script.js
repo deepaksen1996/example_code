@@ -26,17 +26,48 @@ envelope.addEventListener('click', () => {
     // Play Audio (browsers require user interaction to play audio)
     bgMusic.play().catch(e => console.log("Audio play blocked: ", e));
     
-    // Wait for animation, then hide overlay and trigger confetti
+    // Wait for animation, then hide overlay and trigger animations
     setTimeout(() => {
         overlay.classList.add('hidden');
         fireConfetti();
-    }, 1500); // 1.5 seconds delay
+        startFallingFlowers();
+    }, 1500);
 });
+
+// --- Falling Flowers Animation ---
+function startFallingFlowers() {
+    const container = document.getElementById('flower-container');
+    const colors = ['#e84393', '#fdcb6e', '#ff7675', '#d63031']; // Pink, Gold, Light Red, Deep Red
+    
+    setInterval(() => {
+        const petal = document.createElement('div');
+        petal.classList.add('flower-petal');
+        
+        // Randomize starting position, size, duration, and color
+        petal.style.left = Math.random() * 100 + 'vw';
+        petal.style.animationDuration = Math.random() * 3 + 4 + 's'; // 4-7s fall
+        const size = Math.random() * 15 + 10;
+        petal.style.width = size + 'px';
+        petal.style.height = size + 'px';
+        
+        // Randomize petal color using inline SVG
+        const color = colors[Math.floor(Math.random() * colors.length)].replace('#', '%23');
+        petal.style.backgroundImage = `url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="${color}"><path d="M12,2C12,2 8,6 8,12C8,18 12,22 12,22C12,22 16,18 16,12C16,6 12,2 12,2Z"/></svg>')`;
+
+        container.appendChild(petal);
+        
+        // Remove after animation completes
+        setTimeout(() => {
+            petal.remove();
+        }, 7000);
+    }, 400); // New petal every 400ms
+}
+
 
 function fireConfetti() {
     var duration = 5 * 1000;
     var animationEnd = Date.now() + duration;
-    var defaults = { startVelocity: 30, spread: 360, ticks: 60, zIndex: 0 };
+    var defaults = { startVelocity: 30, spread: 360, ticks: 60, zIndex: 100 };
 
     function randomInRange(min, max) {
       return Math.random() * (max - min) + min;
@@ -110,10 +141,7 @@ destinationSelect.addEventListener('change', (e) => {
 });
 
 rsvpForm.addEventListener('submit', (e) => {
-    e.preventDefault(); // Prevent page reload
-    
-    // In the future, we will send this data to Google Sheets via fetch()
-    // For now, we simulate success and show conditional hotel logic.
+    e.preventDefault(); 
     
     const attStatus = attendanceSelect.value;
     const dest = destinationSelect.value;
@@ -130,10 +158,10 @@ rsvpForm.addEventListener('submit', (e) => {
             hotelInfoHtml = `
                 <h4>Thank you for RSVPing! / RSVP करने के लिए धन्यवाद!</h4>
                 <p>Your accommodation in Ajmer is at <strong>Hotel Moresta Restaurant Bar With RoofTop Restaurant</strong>.</p>
-                <a href="https://maps.app.goo.gl/efPpnfZ1eQESjVrf7?g_st=aw" target="_blank" class="btn">View Hotel on Map</a>
+                <a href="https://maps.app.goo.gl/efPpnfZ1eQESjVrf7?g_st=aw" target="_blank" class="glass-button" style="display:inline-block; padding:10px 15px; margin-top:10px; text-decoration:none; border-radius:5px;">View Hotel on Map</a>
             `;
             if(dest === 'both') {
-                hotelInfoHtml += `<p style="margin-top:10px;"><em>Udaipur hotel information is coming soon!</em></p>`;
+                hotelInfoHtml += `<p style="margin-top:15px;"><em>Udaipur hotel information is coming soon!</em></p>`;
             }
         } else if (dest === 'udaipur') {
             hotelInfoHtml = `
@@ -143,7 +171,7 @@ rsvpForm.addEventListener('submit', (e) => {
         }
         
         rsvpResponse.innerHTML = hotelInfoHtml;
-        fireConfetti(); // Celebrate their RSVP!
+        fireConfetti();
     }
     
     rsvpResponse.style.display = 'block';

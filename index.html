@@ -9,6 +9,9 @@
 </head>
 <body class="lang-en">
 
+    <!-- Floral Animation Container -->
+    <div id="flower-container"></div>
+
     <!-- Digital Envelope Overlay -->
     <div id="envelope-overlay" class="envelope-overlay">
         <div class="envelope" id="envelope">
@@ -16,31 +19,31 @@
             <div class="envelope-paper">
                 <h2 class="en">Raja & Asmita</h2>
                 <h2 class="hi">राजा और अस्मिता</h2>
-                <p class="en">Click to Open</p>
-                <p class="hi">खोलने के लिए क्लिक करें</p>
+                <p class="en">Tap to Open</p>
+                <p class="hi">खोलने के लिए टैप करें</p>
             </div>
             <div class="envelope-front"></div>
         </div>
     </div>
 
     <!-- Audio Player (Hidden) -->
+    <!-- Note: You can replace this src with your own 'rajasthani_music.mp3' file in the folder -->
     <audio id="bg-music" loop>
-        <source src="https://www.soundhelix.com/examples/mp3/SoundHelix-Song-1.mp3" type="audio/mpeg">
+        <source src="https://www.soundhelix.com/examples/mp3/SoundHelix-Song-17.mp3" type="audio/mpeg">
         Your browser does not support the audio element.
     </audio>
 
     <!-- Language Toggle Button -->
-    <button id="lang-toggle" class="lang-toggle">अ/A (Hindi/English)</button>
+    <button id="lang-toggle" class="lang-toggle glass-button">अ/A (Hindi/English)</button>
 
     <!-- Main Content -->
     <div class="container" id="main-content">
         
         <!-- Hero Section -->
-        <header class="hero">
+        <header class="hero glass-panel">
             <h3 class="en">We Are Getting Married!</h3>
             <h3 class="hi">हम शादी कर रहे हैं!</h3>
             
-            <!-- We will use a placeholder anime image as requested -->
             <div class="anime-couple-container">
                 <img src="https://api.dicebear.com/7.x/adventurer/svg?seed=RajaAsmita&flip=true" alt="Anime Couple" class="anime-couple">
             </div>
@@ -56,25 +59,25 @@
         </header>
 
         <!-- Countdown Timer -->
-        <section class="countdown-section">
+        <section class="countdown-section glass-panel">
             <h3 class="en">Countdown to Pheras</h3>
             <h3 class="hi">फेरों की उलटी गिनती</h3>
             <div id="countdown" class="countdown">
-                <div class="time-box"><span id="days">00</span><p class="en">Days</p><p class="hi">दिन</p></div>
-                <div class="time-box"><span id="hours">00</span><p class="en">Hours</p><p class="hi">घंटे</p></div>
-                <div class="time-box"><span id="mins">00</span><p class="en">Mins</p><p class="hi">मिनट</p></div>
-                <div class="time-box"><span id="secs">00</span><p class="en">Secs</p><p class="hi">सेकंड</p></div>
+                <div class="time-box glass-box"><span id="days">00</span><p class="en">Days</p><p class="hi">दिन</p></div>
+                <div class="time-box glass-box"><span id="hours">00</span><p class="en">Hours</p><p class="hi">घंटे</p></div>
+                <div class="time-box glass-box"><span id="mins">00</span><p class="en">Mins</p><p class="hi">मिनट</p></div>
+                <div class="time-box glass-box"><span id="secs">00</span><p class="en">Secs</p><p class="hi">सेकंड</p></div>
             </div>
         </section>
 
         <!-- Itinerary Section -->
-        <section class="itinerary">
+        <section class="itinerary glass-panel">
             <h2 class="en section-title">Wedding Itinerary</h2>
             <h2 class="hi section-title">विवाह कार्यक्रम</h2>
 
             <div class="timeline">
                 <!-- Udaipur Events -->
-                <div class="event-day">
+                <div class="event-day glass-box-light">
                     <h3 class="en">November 20th - Udaipur</h3>
                     <h3 class="hi">20 नवंबर - उदयपुर</h3>
                     
@@ -94,7 +97,7 @@
                 </div>
 
                 <!-- Ajmer Events -->
-                <div class="event-day">
+                <div class="event-day glass-box-light">
                     <h3 class="en">November 21st - Ajmer</h3>
                     <h3 class="hi">21 नवंबर - अजमेर</h3>
 
@@ -106,7 +109,7 @@
                         <h4><span class="en">Pheras (Wedding Ceremony)</span><span class="hi">फेरे (विवाह समारोह)</span></h4>
                         <p>9:00 PM</p>
                         <p class="venue-name">Shree Garden</p>
-                        <a href="https://share.google/3zpq3tdkB9fPwOTLx" target="_blank" class="map-link">
+                        <a href="https://share.google/3zpq3tdkB9fPwOTLx" target="_blank" class="map-link glass-button">
                             <span class="en">View on Maps</span><span class="hi">मैप पर देखें</span>
                         </a>
                     </div>
@@ -115,18 +118,18 @@
         </section>
 
         <!-- RSVP Form Section -->
-        <section class="rsvp-section">
+        <section class="rsvp-section glass-panel">
             <h2 class="en section-title">RSVP</h2>
             <h2 class="hi section-title">उपस्थिति की पुष्टि (RSVP)</h2>
             <p class="en">Please let us know if you can join us.</p>
             <p class="hi">कृपया हमें बताएं कि क्या आप शामिल हो सकते हैं।</p>
 
-            <div id="rsvp-response" class="rsvp-response" style="display:none;"></div>
+            <div id="rsvp-response" class="rsvp-response glass-box-light" style="display:none;"></div>
 
             <form id="rsvp-form" class="rsvp-form">
-                <input type="text" id="guest-name" placeholder="Name / नाम" required>
+                <input type="text" id="guest-name" placeholder="Name / नाम" required class="glass-input">
                 
-                <select id="attendance" required>
+                <select id="attendance" required class="glass-input">
                     <option value="" disabled selected class="en">Will you attend?</option>
                     <option value="" disabled selected class="hi">क्या आप शामिल होंगे?</option>
                     <option value="yes">Yes, I will be there / हाँ, मैं आऊंगा</option>
@@ -136,7 +139,7 @@
                 <div id="destination-wrapper" style="display:none;">
                     <label class="en">Where will you join us?</label>
                     <label class="hi">आप हमारे साथ कहाँ शामिल होंगे?</label>
-                    <select id="rsvp-destination">
+                    <select id="rsvp-destination" class="glass-input">
                         <option value="" disabled selected>Select City / शहर चुनें</option>
                         <option value="udaipur">Udaipur (Nov 20)</option>
                         <option value="ajmer">Ajmer (Nov 21)</option>
@@ -147,21 +150,24 @@
                 <div id="travel-details" style="display:none;">
                     <p class="en" style="font-size: 0.9em; margin-bottom: 5px;">Optional Travel Details for Hotel Booking:</p>
                     <p class="hi" style="font-size: 0.9em; margin-bottom: 5px;">होटल बुकिंग के लिए वैकल्पिक यात्रा विवरण:</p>
-                    <input type="text" id="travel-from" placeholder="Travelling From (e.g. Jaipur Airport) / कहाँ से">
-                    <input type="text" id="travel-to" placeholder="Travelling To (e.g. Ajmer) / कहाँ तक">
-                    <input type="text" id="travel-time" placeholder="Arrival Time / पहुँचने का समय">
+                    <input type="text" id="travel-from" placeholder="Travelling From (e.g. Jaipur Airport) / कहाँ से" class="glass-input">
+                    <input type="text" id="travel-to" placeholder="Travelling To (e.g. Ajmer) / कहाँ तक" class="glass-input">
+                    <input type="text" id="travel-time" placeholder="Arrival Time / पहुँचने का समय" class="glass-input">
                 </div>
 
-                <button type="submit" class="submit-btn">
+                <button type="submit" class="submit-btn glass-button">
                     <span class="en">Submit RSVP</span>
                     <span class="hi">जमा करें</span>
                 </button>
             </form>
         </section>
+        
+        <footer class="footer en">Made with love for Raja & Asmita</footer>
+        <footer class="footer hi">राजा और अस्मिता के लिए प्यार से बनाया गया</footer>
 
     </div>
 
-    <!-- Confetti Library -->
+    <!-- Scripts -->
     <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.6.0/dist/confetti.browser.min.js"></script>
     <script src="script.js"></script>
 </body>
