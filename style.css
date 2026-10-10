@@ -1,0 +1,80 @@
+body {
+    font-family: 'Georgia', serif;
+    background-color: #fcf9f2;
+    color: #333;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+}
+
+.container {
+    background-color: #fff;
+    padding: 40px;
+    border-radius: 10px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+    max-width: 600px;
+    text-align: center;
+    border: 2px solid #e3d5ca;
+}
+
+.header h1 {
+    font-size: 2em;
+    color: #5d4037;
+    margin-bottom: 10px;
+}
+
+.header h2 {
+    font-size: 1.2em;
+    font-style: italic;
+    color: #795548;
+    margin-bottom: 20px;
+}
+
+.names {
+    font-size: 3em !important;
+    font-family: 'Brush Script MT', cursive;
+    color: #d4a373;
+    margin-top: 10px;
+}
+
+.details {
+    margin: 40px 0;
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+.details h3 {
+    color: #5d4037;
+    border-bottom: 1px solid #d4a373;
+    padding-bottom: 5px;
+    margin-bottom: 10px;
+}
+
+.details p {
+    margin: 5px 0;
+}
+
+.rsvp {
+    margin-top: 40px;
+}
+
+.rsvp-btn {
+    background-color: #d4a373;
+    color: white;
+    border: none;
+    padding: 15px 30px;
+    font-size: 1.1em;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    margin-top: 15px;
+}
+
+.rsvp-btn:hover {
+    background-color: #b08960;
+}
