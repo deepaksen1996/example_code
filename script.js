@@ -43,6 +43,10 @@ document.addEventListener("DOMContentLoaded", () => {
             // Hide travel details entirely
             travelDetails.style.display = 'none';
         }
+        const plusOneSelect = document.getElementById('plus-one');
+        if (plusOneSelect) {
+            plusOneSelect.closest('.input-group').style.display = 'none';
+        }
     }
 });
 
