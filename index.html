@@ -4,13 +4,11 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Raja & Asmita - Wedding Invitation</title>
-    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;700&family=Noto+Sans+Devanagari:wght@400;700&family=Great+Vibes&display=swap" rel="stylesheet">
+    <!-- Elegant Typography -->
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700&family=Noto+Sans+Devanagari:wght@300;400;700&family=Montserrat:wght@300;400;500;600&family=Great+Vibes&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
 </head>
 <body class="lang-en">
-
-    <!-- Floral Animation Container -->
-    <div id="flower-container"></div>
 
     <!-- Digital Envelope Overlay -->
     <div id="envelope-overlay" class="envelope-overlay">
@@ -26,146 +24,205 @@
         </div>
     </div>
 
-    <!-- Audio Player (Hidden) -->
-    <!-- Note: You can replace this src with your own 'rajasthani_music.mp3' file in the folder -->
+    <!-- Audio Player: Flute Music -->
+    <!-- Using a beautiful, peaceful flute meditation track -->
     <audio id="bg-music" loop>
-        <source src="https://www.soundhelix.com/examples/mp3/SoundHelix-Song-17.mp3" type="audio/mpeg">
+        <source src="https://cdn.pixabay.com/download/audio/2022/05/27/audio_1808fbf589.mp3?filename=flute-meditation-110052.mp3" type="audio/mpeg">
         Your browser does not support the audio element.
     </audio>
 
-    <!-- Language Toggle Button -->
-    <button id="lang-toggle" class="lang-toggle glass-button">अ/A (Hindi/English)</button>
+    <button id="lang-toggle" class="lang-toggle modern-btn-small">अ/A (Hindi/English)</button>
 
-    <!-- Main Content -->
-    <div class="container" id="main-content">
+    <main class="split-layout">
         
-        <!-- Hero Section -->
-        <header class="hero glass-panel">
-            <h3 class="en">We Are Getting Married!</h3>
-            <h3 class="hi">हम शादी कर रहे हैं!</h3>
+        <!-- LEFT PANEL: Krishna Theme & Animations -->
+        <aside class="krishna-panel">
+            <div class="particle-container" id="particle-container"></div>
+            <div id="musical-notes-container"></div>
             
-            <div class="anime-couple-container">
-                <img src="https://api.dicebear.com/7.x/adventurer/svg?seed=RajaAsmita&flip=true" alt="Anime Couple" class="anime-couple">
+            <div class="krishna-wrapper">
+                <div class="krishna-glow"></div>
+                <!-- 
+                  Staff Engineer Note: Replace this src with your generated Anime Krishna image. 
+                  The CSS will automatically apply a smooth floating animation and a beautiful ethereal glow to it.
+                -->
+                <img src="https://images.unsplash.com/photo-1599839619722-39751411ea63?q=80&w=1000&auto=format&fit=crop" alt="Krishna playing flute" class="krishna-img" id="krishna-figure">
             </div>
 
-            <h1 class="names">
-                <span class="en">Raja & Asmita</span>
-                <span class="hi">राजा और अस्मिता</span>
-            </h1>
-            <p class="date">
-                <span class="en">November 21, 2026</span>
-                <span class="hi">21 नवंबर 2026</span>
-            </p>
-        </header>
-
-        <!-- Countdown Timer -->
-        <section class="countdown-section glass-panel">
-            <h3 class="en">Countdown to Pheras</h3>
-            <h3 class="hi">फेरों की उलटी गिनती</h3>
-            <div id="countdown" class="countdown">
-                <div class="time-box glass-box"><span id="days">00</span><p class="en">Days</p><p class="hi">दिन</p></div>
-                <div class="time-box glass-box"><span id="hours">00</span><p class="en">Hours</p><p class="hi">घंटे</p></div>
-                <div class="time-box glass-box"><span id="mins">00</span><p class="en">Mins</p><p class="hi">मिनट</p></div>
-                <div class="time-box glass-box"><span id="secs">00</span><p class="en">Secs</p><p class="hi">सेकंड</p></div>
+            <div class="krishna-text">
+                <p class="en">The Divine Union</p>
+                <p class="hi">दिव्य मिलन</p>
             </div>
-        </section>
+        </aside>
 
-        <!-- Itinerary Section -->
-        <section class="itinerary glass-panel">
-            <h2 class="en section-title">Wedding Itinerary</h2>
-            <h2 class="hi section-title">विवाह कार्यक्रम</h2>
-
-            <div class="timeline">
-                <!-- Udaipur Events -->
-                <div class="event-day glass-box-light">
-                    <h3 class="en">November 20th - Udaipur</h3>
-                    <h3 class="hi">20 नवंबर - उदयपुर</h3>
-                    
-                    <div class="event">
-                        <h4><span class="en">Haldi & Mehendi</span><span class="hi">हल्दी और मेहंदी</span></h4>
-                        <p>11:00 AM - 2:00 PM</p>
-                    </div>
-                    <div class="event">
-                        <h4><span class="en">Mahila Sangeet</span><span class="hi">महिला संगीत</span></h4>
-                        <p>7:30 PM - 12:00 AM</p>
-                    </div>
-                    <div class="event">
-                        <h4><span class="en">Var Nikasi & Bus Departure</span><span class="hi">वर निकासी और बस प्रस्थान</span></h4>
-                        <p class="en">Var Nikasi at 10:30 PM, dancing towards the bus. Bus leaves for Ajmer at 11:30 PM.</p>
-                        <p class="hi">रात 10:30 बजे वर निकासी, बस की ओर प्रस्थान। रात 11:30 बजे अजमेर के लिए बस रवाना।</p>
-                    </div>
-                </div>
-
-                <!-- Ajmer Events -->
-                <div class="event-day glass-box-light">
-                    <h3 class="en">November 21st - Ajmer</h3>
-                    <h3 class="hi">21 नवंबर - अजमेर</h3>
-
-                    <div class="event">
-                        <h4><span class="en">Arrival in Ajmer</span><span class="hi">अजमेर आगमन</span></h4>
-                        <p>9:00 AM</p>
-                    </div>
-                    <div class="event">
-                        <h4><span class="en">Pheras (Wedding Ceremony)</span><span class="hi">फेरे (विवाह समारोह)</span></h4>
-                        <p>9:00 PM</p>
-                        <p class="venue-name">Shree Garden</p>
-                        <a href="https://share.google/3zpq3tdkB9fPwOTLx" target="_blank" class="map-link glass-button">
-                            <span class="en">View on Maps</span><span class="hi">मैप पर देखें</span>
-                        </a>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- RSVP Form Section -->
-        <section class="rsvp-section glass-panel">
-            <h2 class="en section-title">RSVP</h2>
-            <h2 class="hi section-title">उपस्थिति की पुष्टि (RSVP)</h2>
-            <p class="en">Please let us know if you can join us.</p>
-            <p class="hi">कृपया हमें बताएं कि क्या आप शामिल हो सकते हैं।</p>
-
-            <div id="rsvp-response" class="rsvp-response glass-box-light" style="display:none;"></div>
-
-            <form id="rsvp-form" class="rsvp-form">
-                <input type="text" id="guest-name" placeholder="Name / नाम" required class="glass-input">
+        <!-- RIGHT PANEL: Main Content & Information -->
+        <section class="content-panel" id="main-content">
+            <div class="content-inner">
                 
-                <select id="attendance" required class="glass-input">
-                    <option value="" disabled selected class="en">Will you attend?</option>
-                    <option value="" disabled selected class="hi">क्या आप शामिल होंगे?</option>
-                    <option value="yes">Yes, I will be there / हाँ, मैं आऊंगा</option>
-                    <option value="no">Sorry, I can't make it / क्षमा करें, मैं नहीं आ सकता</option>
-                </select>
+                <!-- Hero Section -->
+                <header class="hero reveal-on-scroll">
+                    <h3 class="en overline">We Are Getting Married</h3>
+                    <h3 class="hi overline">हम शादी कर रहे हैं</h3>
+                    
+                    <h1 class="names">
+                        <span class="en">Raja <span class="amp">&</span> Asmita</span>
+                        <span class="hi">राजा <span class="amp">और</span> अस्मिता</span>
+                    </h1>
+                    
+                    <div class="date-divider">
+                        <span class="line"></span>
+                        <p class="date">
+                            <span class="en">November 21, 2026</span>
+                            <span class="hi">21 नवंबर 2026</span>
+                        </p>
+                        <span class="line"></span>
+                    </div>
+                </header>
 
-                <div id="destination-wrapper" style="display:none;">
-                    <label class="en">Where will you join us?</label>
-                    <label class="hi">आप हमारे साथ कहाँ शामिल होंगे?</label>
-                    <select id="rsvp-destination" class="glass-input">
-                        <option value="" disabled selected>Select City / शहर चुनें</option>
-                        <option value="udaipur">Udaipur (Nov 20)</option>
-                        <option value="ajmer">Ajmer (Nov 21)</option>
-                        <option value="both">Both (Nov 20 & 21)</option>
-                    </select>
-                </div>
+                <!-- Countdown Timer -->
+                <section class="countdown-section reveal-on-scroll">
+                    <h3 class="en section-subtitle">Countdown to Pheras</h3>
+                    <h3 class="hi section-subtitle">फेरों की उलटी गिनती</h3>
+                    <div id="countdown" class="countdown modern-countdown">
+                        <div class="time-box"><span id="days">00</span><p class="en">Days</p><p class="hi">दिन</p></div>
+                        <div class="colon">:</div>
+                        <div class="time-box"><span id="hours">00</span><p class="en">Hrs</p><p class="hi">घंटे</p></div>
+                        <div class="colon">:</div>
+                        <div class="time-box"><span id="mins">00</span><p class="en">Min</p><p class="hi">मिनट</p></div>
+                        <div class="colon">:</div>
+                        <div class="time-box"><span id="secs">00</span><p class="en">Sec</p><p class="hi">सेकंड</p></div>
+                    </div>
+                </section>
 
-                <div id="travel-details" style="display:none;">
-                    <p class="en" style="font-size: 0.9em; margin-bottom: 5px;">Optional Travel Details for Hotel Booking:</p>
-                    <p class="hi" style="font-size: 0.9em; margin-bottom: 5px;">होटल बुकिंग के लिए वैकल्पिक यात्रा विवरण:</p>
-                    <input type="text" id="travel-from" placeholder="Travelling From (e.g. Jaipur Airport) / कहाँ से" class="glass-input">
-                    <input type="text" id="travel-to" placeholder="Travelling To (e.g. Ajmer) / कहाँ तक" class="glass-input">
-                    <input type="text" id="travel-time" placeholder="Arrival Time / पहुँचने का समय" class="glass-input">
-                </div>
+                <!-- Itinerary Section -->
+                <section class="itinerary reveal-on-scroll">
+                    <h2 class="en section-title">Wedding Itinerary</h2>
+                    <h2 class="hi section-title">विवाह कार्यक्रम</h2>
 
-                <button type="submit" class="submit-btn glass-button">
-                    <span class="en">Submit RSVP</span>
-                    <span class="hi">जमा करें</span>
-                </button>
-            </form>
+                    <div class="timeline">
+                        <!-- Udaipur Events -->
+                        <div class="timeline-block reveal-on-scroll">
+                            <div class="timeline-dot"></div>
+                            <div class="timeline-content">
+                                <h3 class="en timeline-date">Nov 20th <span>| Udaipur</span></h3>
+                                <h3 class="hi timeline-date">20 नवंबर <span>| उदयपुर</span></h3>
+                                
+                                <div class="event-item">
+                                    <h4><span class="en">Haldi & Mehendi</span><span class="hi">हल्दी और मेहंदी</span></h4>
+                                    <p>11:00 AM - 2:00 PM</p>
+                                </div>
+                                <div class="event-item">
+                                    <h4><span class="en">Mahila Sangeet</span><span class="hi">महिला संगीत</span></h4>
+                                    <p>7:30 PM - 12:00 AM</p>
+                                </div>
+                                <div class="event-item">
+                                    <h4><span class="en">Var Nikasi & Bus Departure</span><span class="hi">वर निकासी और बस प्रस्थान</span></h4>
+                                    <p class="en">Var Nikasi at 10:30 PM. Dancing towards the bus which leaves for Ajmer at 11:30 PM.</p>
+                                    <p class="hi">रात 10:30 बजे वर निकासी। रात 11:30 बजे अजमेर के लिए बस रवाना।</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Ajmer Events -->
+                        <div class="timeline-block reveal-on-scroll">
+                            <div class="timeline-dot"></div>
+                            <div class="timeline-content">
+                                <h3 class="en timeline-date">Nov 21st <span>| Ajmer</span></h3>
+                                <h3 class="hi timeline-date">21 नवंबर <span>| अजमेर</span></h3>
+
+                                <div class="event-item">
+                                    <h4><span class="en">Arrival in Ajmer</span><span class="hi">अजमेर आगमन</span></h4>
+                                    <p>9:00 AM</p>
+                                </div>
+                                <div class="event-item highlight-event">
+                                    <h4><span class="en">Pheras (Wedding Ceremony)</span><span class="hi">फेरे (विवाह समारोह)</span></h4>
+                                    <p class="time">9:00 PM</p>
+                                    <p class="venue-name">Shree Garden</p>
+                                    <a href="https://share.google/3zpq3tdkB9fPwOTLx" target="_blank" class="modern-link">
+                                        <span class="en">View on Maps ↗</span><span class="hi">मैप पर देखें ↗</span>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- RSVP Form Section -->
+                <section class="rsvp-section reveal-on-scroll">
+                    <div class="rsvp-card">
+                        <h2 class="en section-title">RSVP</h2>
+                        <h2 class="hi section-title">उपस्थिति की पुष्टि</h2>
+                        <p class="en rsvp-desc">We would be honored by your presence.</p>
+                        <p class="hi rsvp-desc">आपकी उपस्थिति से हम अनुगृहीत होंगे।</p>
+
+                        <div id="rsvp-response" class="rsvp-response" style="display:none;"></div>
+
+                        <form id="rsvp-form" class="modern-form">
+                            <div class="input-group">
+                                <input type="text" id="guest-name" required class="modern-input" placeholder=" ">
+                                <label class="floating-label"><span class="en">Full Name</span><span class="hi">पूरा नाम</span></label>
+                            </div>
+                            
+                            <div class="input-group">
+                                <select id="attendance" required class="modern-input">
+                                    <option value="" disabled selected></option>
+                                    <option value="yes" class="en">Yes, I will attend</option>
+                                    <option value="no" class="en">Sorry, I cannot make it</option>
+                                    <option value="yes" class="hi">हाँ, मैं आऊंगा</option>
+                                    <option value="no" class="hi">क्षमा करें, मैं नहीं आ सकता</option>
+                                </select>
+                                <label class="floating-label-select"><span class="en">Will you attend?</span><span class="hi">क्या आप शामिल होंगे?</span></label>
+                            </div>
+
+                            <div id="destination-wrapper" class="hidden-group">
+                                <div class="input-group">
+                                    <select id="rsvp-destination" class="modern-input">
+                                        <option value="" disabled selected></option>
+                                        <option value="udaipur">Udaipur (Nov 20)</option>
+                                        <option value="ajmer">Ajmer (Nov 21)</option>
+                                        <option value="both">Both (Nov 20 & 21)</option>
+                                    </select>
+                                    <label class="floating-label-select"><span class="en">Where will you join us?</span><span class="hi">आप कहाँ शामिल होंगे?</span></label>
+                                </div>
+                            </div>
+
+                            <div id="travel-details" class="hidden-group travel-group">
+                                <p class="en form-helper">Optional Travel Details (For Hotel Booking)</p>
+                                <p class="hi form-helper">वैकल्पिक यात्रा विवरण (होटल बुकिंग के लिए)</p>
+                                
+                                <div class="travel-grid">
+                                    <div class="input-group">
+                                        <input type="text" id="travel-from" class="modern-input" placeholder=" ">
+                                        <label class="floating-label"><span class="en">Travelling From</span><span class="hi">कहाँ से</span></label>
+                                    </div>
+                                    <div class="input-group">
+                                        <input type="text" id="travel-to" class="modern-input" placeholder=" ">
+                                        <label class="floating-label"><span class="en">Travelling To</span><span class="hi">कहाँ तक</span></label>
+                                    </div>
+                                    <div class="input-group">
+                                        <input type="text" id="travel-time" class="modern-input" placeholder=" ">
+                                        <label class="floating-label"><span class="en">Arrival Time</span><span class="hi">पहुँचने का समय</span></label>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <button type="submit" class="submit-btn modern-btn">
+                                <span class="en">Submit RSVP</span>
+                                <span class="hi">जमा करें</span>
+                            </button>
+                        </form>
+                    </div>
+                </section>
+                
+                <footer class="footer reveal-on-scroll">
+                    <p class="en">Crafted with love for Raja & Asmita</p>
+                    <p class="hi">राजा और अस्मिता के लिए प्यार से बनाया गया</p>
+                </footer>
+
+            </div>
         </section>
-        
-        <footer class="footer en">Made with love for Raja & Asmita</footer>
-        <footer class="footer hi">राजा और अस्मिता के लिए प्यार से बनाया गया</footer>
 
-    </div>
+    </main>
 
     <!-- Scripts -->
     <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.6.0/dist/confetti.browser.min.js"></script>
