@@ -5,8 +5,7 @@ const currentPath = window.location.pathname.replace(/\/$/, "");
 document.addEventListener("DOMContentLoaded", () => {
     const heroSection = document.querySelector('.hero');
     const sideBadge = document.createElement('div');
-    sideBadge.style.cssText = "font-family: 'Cinzel', serif; color: var(--gold); margin-bottom: 10px; font-size: 1.1rem; letter-spacing: 2px; text-transform: uppercase;";
-    
+    sideBadge.className = 'side-badge';
     if (currentPath.endsWith('/raja')) {
         sideBadge.innerHTML = `<span class="en">✨ Groom's Side ✨</span><span class="hi">✨ वर पक्ष ✨</span>`;
         heroSection.insertBefore(sideBadge, heroSection.firstChild);

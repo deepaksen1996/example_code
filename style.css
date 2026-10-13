@@ -199,6 +199,14 @@ body.lang-hi .en { display: none !important; }
     margin-bottom: 20px;
 }
 .names .amp { font-family: 'Cinzel', serif; font-size: 3rem; color: var(--gold); }
+.side-badge {
+    font-family: 'Cinzel', serif;
+    color: var(--gold);
+    margin-bottom: 10px;
+    font-size: 1.1rem;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+}
 
 .date-divider {
     display: flex;
@@ -489,6 +497,9 @@ body.lang-hi .en { display: none !important; }
     .krishna-panel { flex: none; height: 50vh; min-height: 400px; width: 100%; border-radius: 0 0 30px 30px; box-shadow: 0 10px 20px rgba(0,0,0,0.1); z-index: 10; position: relative;}
     .content-panel { flex: none; width: 100%; overflow: visible; }
     .content-inner { padding: 40px 15px; }
+    .side-badge { font-size: clamp(0.75rem, 3.5vw, 1.1rem); margin-bottom: 5px; }
+    .date-divider .date { font-size: clamp(0.8rem, 3.5vw, 1.1rem); margin: 0 10px; white-space: nowrap; }
+    .date-divider .line { width: 30px; }
     .names { font-size: clamp(2.5rem, 12vw, 3.5rem); }
     .welcome-text { font-size: 1rem; }
     .names-choice { font-size: clamp(2.5rem, 12vw, 3.5rem); }
