@@ -25,13 +25,15 @@
     </div>
 
     <!-- Audio Player: Flute Music -->
-    <!-- Using a beautiful, peaceful flute meditation track -->
     <audio id="bg-music" loop>
         <source src="https://cdn.pixabay.com/download/audio/2022/05/27/audio_1808fbf589.mp3?filename=flute-meditation-110052.mp3" type="audio/mpeg">
         Your browser does not support the audio element.
     </audio>
 
-    <button id="lang-toggle" class="lang-toggle modern-btn-small">अ/A (Hindi/English)</button>
+    <div class="floating-controls">
+        <button id="lang-toggle" class="modern-btn-small">अ/A</button>
+        <button id="audio-toggle" class="modern-btn-small">🔊</button>
+    </div>
 
     <main class="split-layout">
         
@@ -43,10 +45,10 @@
             <div class="krishna-wrapper">
                 <div class="krishna-glow"></div>
                 <!-- 
-                  Staff Engineer Note: Replace this src with your generated Anime Krishna image. 
+                  Staff Engineer Note: This is a classic painting of Lord Krishna playing the flute. 
                   The CSS will automatically apply a smooth floating animation and a beautiful ethereal glow to it.
                 -->
-                <img src="https://images.unsplash.com/photo-1599839619722-39751411ea63?q=80&w=1000&auto=format&fit=crop" alt="Krishna playing flute" class="krishna-img" id="krishna-figure">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/3/3a/Krishna_with_flute.jpg" alt="Krishna playing flute" class="krishna-img" id="krishna-figure">
             </div>
 
             <div class="krishna-text">

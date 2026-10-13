@@ -20,10 +20,34 @@ langToggleBtn.addEventListener('click', () => {
 const envelope = document.getElementById('envelope');
 const overlay = document.getElementById('envelope-overlay');
 const bgMusic = document.getElementById('bg-music');
+const audioToggleBtn = document.getElementById('audio-toggle');
+let isAudioPlaying = false;
+
+// Attempt to play audio
+function playAudio() {
+    bgMusic.play().then(() => {
+        isAudioPlaying = true;
+        audioToggleBtn.innerText = '🔊';
+    }).catch(e => {
+        console.log("Audio play blocked by browser: ", e);
+        isAudioPlaying = false;
+        audioToggleBtn.innerText = '🔇';
+    });
+}
+
+audioToggleBtn.addEventListener('click', () => {
+    if (isAudioPlaying) {
+        bgMusic.pause();
+        isAudioPlaying = false;
+        audioToggleBtn.innerText = '🔇';
+    } else {
+        playAudio();
+    }
+});
 
 envelope.addEventListener('click', () => {
     envelope.classList.add('open');
-    bgMusic.play().catch(e => console.log("Audio play blocked by browser: ", e));
+    playAudio();
     
     setTimeout(() => {
         overlay.classList.add('hidden');

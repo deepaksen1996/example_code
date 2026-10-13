@@ -392,22 +392,29 @@ body.lang-hi .en { display: none !important; }
 }
 
 /* Floating Controls */
-.lang-toggle {
+.floating-controls {
     position: fixed;
     top: 30px; right: 30px;
+    display: flex;
+    gap: 10px;
+    z-index: 100;
+}
+.modern-btn-small {
     background: var(--paper);
     color: var(--primary-dark);
     border: 1px solid #e2e8f0;
-    padding: 10px 20px;
+    padding: 10px 15px;
     border-radius: 30px;
-    font-size: 0.85rem;
+    font-size: 0.9rem;
     font-weight: 600;
     cursor: pointer;
-    z-index: 100;
     box-shadow: 0 4px 15px rgba(0,0,0,0.05);
     transition: var(--transition-smooth);
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
-.lang-toggle:hover { border-color: var(--gold); color: var(--gold); }
+.modern-btn-small:hover { border-color: var(--gold); color: var(--gold); }
 
 /* --- Envelope Overlay --- */
 .envelope-overlay {
