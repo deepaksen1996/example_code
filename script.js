@@ -20,6 +20,12 @@ document.addEventListener("DOMContentLoaded", () => {
             udaipurEvents.style.display = 'none';
         }
         
+        // Hide Ajmer Arrival for Bride's side
+        const ajmerArrival = document.getElementById('ajmer-arrival');
+        if (ajmerArrival) {
+            ajmerArrival.style.display = 'none';
+        }
+        
         // Swap names so Bride's name is first
         const heroNamesEn = document.querySelector('.hero .names .en');
         const heroNamesHi = document.querySelector('.hero .names .hi');
