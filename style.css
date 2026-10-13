@@ -482,11 +482,15 @@ body.lang-hi .en { display: none !important; }
 
 /* Responsive Mobile Layout */
 @media (max-width: 900px) {
-    .split-layout { flex-direction: column; overflow-y: auto; height: auto; }
-    .krishna-panel { flex: none; height: 50vh; width: 100%; border-radius: 0 0 30px 30px; box-shadow: 0 10px 20px rgba(0,0,0,0.1);}
-    .content-panel { flex: none; width: 100%; overflow-y: visible; }
+    body { overflow-y: auto; overflow-x: hidden; }
+    .split-layout { flex-direction: column; height: auto; overflow: visible; }
+    .krishna-panel { flex: none; height: 50vh; min-height: 400px; width: 100%; border-radius: 0 0 30px 30px; box-shadow: 0 10px 20px rgba(0,0,0,0.1); z-index: 10; position: relative;}
+    .content-panel { flex: none; width: 100%; overflow: visible; }
     .content-inner { padding: 40px 20px; }
     .names { font-size: 3.5rem; }
+    .names-choice { font-size: 3.5rem; }
+    .choose-container { flex-direction: column; gap: 15px; margin-top: 30px; }
+    .choose-btn { padding: 15px 30px; }
     .modern-countdown .time-box span { font-size: 1.8rem; }
     .lang-toggle { top: 20px; right: 20px; padding: 8px 15px; font-size: 0.75rem;}
 }
