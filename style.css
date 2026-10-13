@@ -412,9 +412,11 @@ body.lang-hi .en { display: none !important; }
     z-index: 100;
 }
 .modern-btn-small {
-    background: var(--paper);
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(5px);
+    -webkit-backdrop-filter: blur(5px);
     color: var(--primary-dark);
-    border: 1px solid #e2e8f0;
+    border: 1px solid rgba(10, 25, 47, 0.2);
     padding: 10px 15px;
     border-radius: 30px;
     font-size: 0.9rem;
@@ -486,11 +488,17 @@ body.lang-hi .en { display: none !important; }
     .split-layout { flex-direction: column; height: auto; overflow: visible; }
     .krishna-panel { flex: none; height: 50vh; min-height: 400px; width: 100%; border-radius: 0 0 30px 30px; box-shadow: 0 10px 20px rgba(0,0,0,0.1); z-index: 10; position: relative;}
     .content-panel { flex: none; width: 100%; overflow: visible; }
-    .content-inner { padding: 40px 20px; }
-    .names { font-size: 3.5rem; }
-    .names-choice { font-size: 3.5rem; }
-    .choose-container { flex-direction: column; gap: 15px; margin-top: 30px; }
-    .choose-btn { padding: 15px 30px; }
-    .modern-countdown .time-box span { font-size: 1.8rem; }
+    .content-inner { padding: 40px 15px; }
+    .names { font-size: clamp(2.5rem, 12vw, 3.5rem); }
+    .welcome-text { font-size: 1rem; }
+    .names-choice { font-size: clamp(2.5rem, 12vw, 3.5rem); }
+    .choose-container { flex-direction: column; gap: 15px; margin-top: 30px; width: 100%; padding: 0 20px; box-sizing: border-box; }
+    .choose-btn { padding: 15px 20px; width: 100%; box-sizing: border-box; }
+    
+    .modern-countdown { gap: 8px; }
+    .modern-countdown .time-box { min-width: 50px; }
+    .modern-countdown .time-box span { font-size: clamp(1.2rem, 6vw, 1.8rem); }
+    .modern-countdown .colon { font-size: 1.2rem; margin-top: -15px; }
+    
     .lang-toggle { top: 20px; right: 20px; padding: 8px 15px; font-size: 0.75rem;}
 }
