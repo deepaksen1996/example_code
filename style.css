@@ -191,8 +191,8 @@ body.lang-hi .en { display: none !important; }
 }
 
 .names {
-    font-family: 'Dancing Script', cursive;
-    font-size: 5rem;
+    font-family: 'Alex Brush', cursive;
+    font-size: 5.5rem;
     color: var(--primary-dark);
     text-align: center;
     line-height: 1.2;
@@ -443,7 +443,7 @@ body.lang-hi .en { display: none !important; }
     display: flex; flex-direction: column; align-items: center; text-align: center; color: var(--paper);
 }
 .welcome-text { font-family: 'Cinzel', serif; font-size: 1.2rem; letter-spacing: 2px; margin-bottom: 20px; text-transform: uppercase; color: var(--gold-light); }
-.names-choice { font-family: 'Dancing Script', cursive; font-size: 5rem; color: var(--gold); display: block; margin-top: 15px; text-transform: none; }
+.names-choice { font-family: 'Alex Brush', cursive; font-size: 5.5rem; color: var(--gold); display: block; margin-top: 15px; text-transform: none; }
 .subtitle { font-family: 'Montserrat', sans-serif; font-size: 0.9rem; letter-spacing: 2px; color: var(--text-muted); text-transform: uppercase;}
 .choose-container { display: flex; gap: 30px; margin-top: 50px; }
 .choose-btn {

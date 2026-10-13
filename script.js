@@ -19,6 +19,12 @@ document.addEventListener("DOMContentLoaded", () => {
         if (udaipurEvents) {
             udaipurEvents.style.display = 'none';
         }
+        
+        // Swap names so Bride's name is first
+        const heroNamesEn = document.querySelector('.hero .names .en');
+        const heroNamesHi = document.querySelector('.hero .names .hi');
+        if (heroNamesEn) heroNamesEn.innerHTML = `Asmita <span class="amp">&</span> Raja`;
+        if (heroNamesHi) heroNamesHi.innerHTML = `अस्मिता <span class="amp">और</span> राजा`;
     }
 });
 
