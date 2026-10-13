@@ -227,6 +227,7 @@ rsvpForm.addEventListener('submit', (e) => {
     const guestName = document.getElementById('guest-name').value;
     const attStatus = attendanceSelect.value;
     const dest = destinationSelect.value;
+    const plusOne = document.getElementById('plus-one') ? document.getElementById('plus-one').value : '0';
     const travelFrom = document.getElementById('travel-from').value;
     const travelTo = document.getElementById('travel-to').value;
     const travelTime = document.getElementById('travel-time').value;
@@ -235,6 +236,7 @@ rsvpForm.addEventListener('submit', (e) => {
     formData.append('Name', guestName);
     formData.append('Attendance', attStatus);
     formData.append('Destination', dest || '');
+    formData.append('PlusOne', plusOne);
     formData.append('TravelFrom', travelFrom);
     formData.append('TravelTo', travelTo);
     formData.append('TravelTime', travelTime);
@@ -251,15 +253,17 @@ rsvpForm.addEventListener('submit', (e) => {
                 `;
             } else {
                 let hotelInfoHtml = '';
-                if (dest === 'ajmer' || dest === 'both') {
+                if (dest === 'ajmer') {
                     hotelInfoHtml = `
                         <h4>Thank you for RSVPing! / RSVP करने के लिए धन्यवाद!</h4>
                         <p style="margin-bottom:10px;">Your accommodation in Ajmer is at <strong>Hotel Moresta Restaurant Bar With RoofTop Restaurant</strong>.</p>
                         <a href="https://maps.app.goo.gl/efPpnfZ1eQESjVrf7?g_st=aw" target="_blank" class="modern-link" style="display:inline-block;">View Hotel on Map ↗</a>
                     `;
-                    if(dest === 'both') {
-                        hotelInfoHtml += `<p style="margin-top:20px; color:var(--text-muted); font-size:0.9rem;"><em>Udaipur hotel information is coming soon!</em></p>`;
-                    }
+                } else if (dest === 'both') {
+                    hotelInfoHtml = `
+                        <h4>Thank you for RSVPing! / RSVP करने के लिए धन्यवाद!</h4>
+                        <p>Hotel information for your stay is being arranged. We will reach out to you once it is booked!</p>
+                    `;
                 } else if (dest === 'udaipur') {
                     hotelInfoHtml = `
                         <h4>Thank you for RSVPing! / RSVP करने के लिए धन्यवाद!</h4>
