@@ -13,6 +13,12 @@ document.addEventListener("DOMContentLoaded", () => {
     } else if (currentPath.endsWith('/asmita')) {
         sideBadge.innerHTML = `<span class="en">✨ Bride's Side ✨</span><span class="hi">✨ वधू पक्ष ✨</span>`;
         heroSection.insertBefore(sideBadge, heroSection.firstChild);
+        
+        // Hide Udaipur Events for Bride's side
+        const udaipurEvents = document.getElementById('udaipur-events');
+        if (udaipurEvents) {
+            udaipurEvents.style.display = 'none';
+        }
     }
 });
 
@@ -32,12 +38,23 @@ langToggleBtn.addEventListener('click', () => {
     }
 });
 
-// Envelope & Entrance Animation
-const envelope = document.getElementById('envelope');
-const overlay = document.getElementById('envelope-overlay');
+// Modern Entrance & Audio Logic
+const entranceOverlay = document.getElementById('entrance-overlay');
+const pathChooser = document.getElementById('path-chooser');
+const directEntrance = document.getElementById('direct-entrance');
+const enterBtn = document.getElementById('enter-btn');
 const bgMusic = document.getElementById('bg-music');
 const audioToggleBtn = document.getElementById('audio-toggle');
 let isAudioPlaying = false;
+
+// Handle overlay display based on path
+if (currentPath.endsWith('/raja') || currentPath.endsWith('/asmita')) {
+    pathChooser.style.display = 'none';
+    directEntrance.style.display = 'flex';
+} else {
+    pathChooser.style.display = 'flex';
+    directEntrance.style.display = 'none';
+}
 
 // Attempt to play audio
 function playAudio() {
@@ -62,16 +79,19 @@ audioToggleBtn.addEventListener('click', () => {
     }
 });
 
-envelope.addEventListener('click', () => {
-    envelope.classList.add('open');
-    playAudio();
-    
-    setTimeout(() => {
-        overlay.classList.add('hidden');
-        fireConfetti();
-        createMusicalNotes();
-    }, 1500);
-});
+if (enterBtn) {
+    enterBtn.addEventListener('click', () => {
+        // Trigger zoom out fade animation
+        entranceOverlay.classList.add('zoom-out-fade');
+        playAudio();
+        
+        setTimeout(() => {
+            entranceOverlay.style.display = 'none';
+            fireConfetti();
+            createMusicalNotes();
+        }, 1500); // Wait for animation to finish
+    });
+}
 
 // Create Floating Musical Notes
 function createMusicalNotes() {
