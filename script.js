@@ -272,11 +272,18 @@ rsvpForm.addEventListener('submit', (e) => {
             } else {
                 let hotelInfoHtml = '';
                 if (dest === 'ajmer') {
-                    hotelInfoHtml = `
-                        <h4>Thank you for RSVPing! / RSVP करने के लिए धन्यवाद!</h4>
-                        <p style="margin-bottom:10px;">Your accommodation in Ajmer is at <strong>Hotel Moresta Restaurant Bar With RoofTop Restaurant</strong>.</p>
-                        <a href="https://maps.app.goo.gl/efPpnfZ1eQESjVrf7?g_st=aw" target="_blank" class="modern-link" style="display:inline-block;">View Hotel on Map ↗</a>
-                    `;
+                    if (currentPath.endsWith('/asmita')) {
+                        hotelInfoHtml = `
+                            <h4>Thank you for RSVPing! / RSVP करने के लिए धन्यवाद!</h4>
+                            <p>We look forward to seeing you in Ajmer!</p>
+                        `;
+                    } else {
+                        hotelInfoHtml = `
+                            <h4>Thank you for RSVPing! / RSVP करने के लिए धन्यवाद!</h4>
+                            <p style="margin-bottom:10px;">Your accommodation in Ajmer is at <strong>Hotel Moresta Restaurant Bar With RoofTop Restaurant</strong>.</p>
+                            <a href="https://maps.app.goo.gl/efPpnfZ1eQESjVrf7?g_st=aw" target="_blank" class="modern-link" style="display:inline-block;">View Hotel on Map ↗</a>
+                        `;
+                    }
                 } else if (dest === 'both') {
                     hotelInfoHtml = `
                         <h4>Thank you for RSVPing! / RSVP करने के लिए धन्यवाद!</h4>
