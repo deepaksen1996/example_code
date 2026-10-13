@@ -143,37 +143,67 @@ destinationSelect.addEventListener('change', (e) => {
 rsvpForm.addEventListener('submit', (e) => {
     e.preventDefault(); 
     
+    // Disable button and show loading text
+    const submitBtn = rsvpForm.querySelector('.submit-btn');
+    const originalBtnText = submitBtn.innerHTML;
+    submitBtn.innerHTML = '<span class="en">Submitting...</span><span class="hi">जमा हो रहा है...</span>';
+    submitBtn.disabled = true;
+
+    const guestName = document.getElementById('guest-name').value;
     const attStatus = attendanceSelect.value;
     const dest = destinationSelect.value;
-    
-    if (attStatus === 'no') {
-        rsvpResponse.innerHTML = `
-            <h4>Thank you for letting us know! / बताने के लिए धन्यवाद!</h4>
-            <p>We will miss you at the wedding.</p>
-        `;
-    } else {
-        let hotelInfoHtml = '';
-        
-        if (dest === 'ajmer' || dest === 'both') {
-            hotelInfoHtml = `
-                <h4>Thank you for RSVPing! / RSVP करने के लिए धन्यवाद!</h4>
-                <p>Your accommodation in Ajmer is at <strong>Hotel Moresta Restaurant Bar With RoofTop Restaurant</strong>.</p>
-                <a href="https://maps.app.goo.gl/efPpnfZ1eQESjVrf7?g_st=aw" target="_blank" class="glass-button" style="display:inline-block; padding:10px 15px; margin-top:10px; text-decoration:none; border-radius:5px;">View Hotel on Map</a>
-            `;
-            if(dest === 'both') {
-                hotelInfoHtml += `<p style="margin-top:15px;"><em>Udaipur hotel information is coming soon!</em></p>`;
+    const travelFrom = document.getElementById('travel-from').value;
+    const travelTo = document.getElementById('travel-to').value;
+    const travelTime = document.getElementById('travel-time').value;
+
+    const formData = new FormData();
+    formData.append('Name', guestName);
+    formData.append('Attendance', attStatus);
+    formData.append('Destination', dest || '');
+    formData.append('TravelFrom', travelFrom);
+    formData.append('TravelTo', travelTo);
+    formData.append('TravelTime', travelTime);
+
+    // Replace this URL with your Google Apps Script Web App URL
+    const scriptURL = 'https://script.google.com/macros/s/AKfycbzFgHW7R1Fee4Ka065QqRzTx4DWpFIZ-6OOnzAuOZMWyiXnc5gWjsGdX9_p1tRXlBvA/exec';
+
+    fetch(scriptURL, { method: 'POST', body: formData })
+        .then(response => {
+            if (attStatus === 'no') {
+                rsvpResponse.innerHTML = `
+                    <h4>Thank you for letting us know! / बताने के लिए धन्यवाद!</h4>
+                    <p>We will miss you at the wedding.</p>
+                `;
+            } else {
+                let hotelInfoHtml = '';
+                
+                if (dest === 'ajmer' || dest === 'both') {
+                    hotelInfoHtml = `
+                        <h4>Thank you for RSVPing! / RSVP करने के लिए धन्यवाद!</h4>
+                        <p>Your accommodation in Ajmer is at <strong>Hotel Moresta Restaurant Bar With RoofTop Restaurant</strong>.</p>
+                        <a href="https://maps.app.goo.gl/efPpnfZ1eQESjVrf7?g_st=aw" target="_blank" class="glass-button" style="display:inline-block; padding:10px 15px; margin-top:10px; text-decoration:none; border-radius:5px;">View Hotel on Map</a>
+                    `;
+                    if(dest === 'both') {
+                        hotelInfoHtml += `<p style="margin-top:15px;"><em>Udaipur hotel information is coming soon!</em></p>`;
+                    }
+                } else if (dest === 'udaipur') {
+                    hotelInfoHtml = `
+                        <h4>Thank you for RSVPing! / RSVP करने के लिए धन्यवाद!</h4>
+                        <p>Hotel information for Udaipur is coming soon. We will reach out to you once it is booked!</p>
+                    `;
+                }
+                
+                rsvpResponse.innerHTML = hotelInfoHtml;
+                fireConfetti();
             }
-        } else if (dest === 'udaipur') {
-            hotelInfoHtml = `
-                <h4>Thank you for RSVPing! / RSVP करने के लिए धन्यवाद!</h4>
-                <p>Hotel information for Udaipur is coming soon. We will reach out to you once it is booked!</p>
-            `;
-        }
-        
-        rsvpResponse.innerHTML = hotelInfoHtml;
-        fireConfetti();
-    }
-    
-    rsvpResponse.style.display = 'block';
-    rsvpForm.style.display = 'none';
+            
+            rsvpResponse.style.display = 'block';
+            rsvpForm.style.display = 'none';
+        })
+        .catch(error => {
+            console.error('Error!', error.message);
+            submitBtn.innerHTML = originalBtnText;
+            submitBtn.disabled = false;
+            alert('There was an error submitting your RSVP. Please try again.');
+        });
 });
