@@ -6,22 +6,41 @@
     <title>Raja & Asmita - Wedding Invitation</title>
     <!-- Elegant Typography -->
     <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700&family=Noto+Sans+Devanagari:wght@300;400;700&family=Montserrat:wght@300;400;500;600&family=Dancing+Script:wght@700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="/style.css">
 </head>
 <body class="lang-en">
 
-    <!-- Digital Envelope Overlay -->
-    <div id="envelope-overlay" class="envelope-overlay">
-        <div class="envelope" id="envelope">
-            <div class="envelope-flap" id="envelope-flap"></div>
-            <div class="envelope-paper">
-                <h2 class="en">Raja & Asmita</h2>
-                <h2 class="hi">राजा और अस्मिता</h2>
-                <p class="en">Tap to Open</p>
-                <p class="hi">खोलने के लिए टैप करें</p>
+    <!-- Modern Entrance Overlay -->
+    <div id="entrance-overlay" class="entrance-overlay">
+        
+        <!-- Root Path Chooser -->
+        <div id="path-chooser" class="path-chooser" style="display: none;">
+            <h2 class="welcome-text">Welcome to the Wedding of<br><span class="names-choice">Raja & Asmita</span></h2>
+            <p class="en subtitle">Please select your invitation</p>
+            <p class="hi subtitle">कृपया अपना निमंत्रण चुनें</p>
+            <div class="choose-container">
+                <a href="/raja" class="choose-btn"><span class="en">Groom's Guests</span><span class="hi">वर के मेहमान</span></a>
+                <a href="/asmita" class="choose-btn"><span class="en">Bride's Guests</span><span class="hi">वधू के मेहमान</span></a>
             </div>
-            <div class="envelope-front"></div>
         </div>
+
+        <!-- Direct Path Entrance -->
+        <div id="direct-entrance" class="direct-entrance" style="display: none;">
+            <div class="mandala-container" id="enter-btn">
+                <!-- Sleek Minimalist Lotus SVG -->
+                <svg viewBox="0 0 100 100" class="mandala-svg" width="150" height="150">
+                    <circle cx="50" cy="50" r="48" fill="none" stroke="var(--gold)" stroke-width="1" stroke-dasharray="4 4"/>
+                    <path d="M50 10 Q 60 40 90 50 Q 60 60 50 90 Q 40 60 10 50 Q 40 40 50 10" fill="none" stroke="var(--gold)" stroke-width="1"/>
+                    <path d="M50 20 Q 55 45 80 50 Q 55 55 50 80 Q 45 55 20 50 Q 45 45 50 20" fill="none" stroke="var(--gold)" stroke-width="1"/>
+                    <circle cx="50" cy="50" r="8" fill="var(--gold)"/>
+                </svg>
+                <div class="enter-text">
+                    <span class="en">Tap to Enter</span>
+                    <span class="hi">प्रवेश करने के लिए टैप करें</span>
+                </div>
+            </div>
+        </div>
+
     </div>
 
     <!-- Audio Player: Flute Music -->
@@ -32,7 +51,7 @@
 
     <div class="floating-controls">
         <button id="lang-toggle" class="modern-btn-small">अ/A</button>
-        <button id="audio-toggle" class="modern-btn-small">🔊</button>
+        <button id="audio-toggle" class="modern-btn-small">🔇</button>
     </div>
 
     <main class="split-layout">
@@ -45,7 +64,7 @@
             <div class="krishna-wrapper">
                 <div class="krishna-glow"></div>
                 <!-- User Uploaded Image -->
-                <img src="govind_dev_ji_new.jpg" alt="Govind Dev Ji" class="krishna-img angled-float" id="krishna-figure">
+                <img src="/govind_dev_ji_new.jpg" alt="Govind Dev Ji" class="krishna-img angled-float" id="krishna-figure">
             </div>
 
             <div class="krishna-text">
@@ -100,7 +119,7 @@
 
                     <div class="timeline">
                         <!-- Udaipur Events -->
-                        <div class="timeline-block reveal-on-scroll">
+                        <div class="timeline-block reveal-on-scroll" id="udaipur-events">
                             <div class="timeline-dot"></div>
                             <div class="timeline-content">
                                 <h3 class="en timeline-date">Nov 20th <span>| Udaipur</span></h3>
@@ -225,6 +244,6 @@
 
     <!-- Scripts -->
     <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.6.0/dist/confetti.browser.min.js"></script>
-    <script src="script.js"></script>
+    <script src="/script.js"></script>
 </body>
 </html>

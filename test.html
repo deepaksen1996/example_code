@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+.mandala {
+    width: 100px; height: 100px; background: red;
+    animation: spin 2s linear infinite;
+    transition: transform 2s;
+}
+.zoom .mandala {
+    transform: scale(5);
+}
+@keyframes spin { 100% { transform: rotate(360deg); } }
+</style>
+</head>
+<body>
+<div class="mandala" id="m"></div>
+<button onclick="document.body.classList.add('zoom')">Zoom</button>
+</body>
+</html>
