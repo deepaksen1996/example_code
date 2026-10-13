@@ -13,7 +13,7 @@
 * { margin: 0; padding: 0; box-sizing: border-box; }
 
 body {
-    font-family: 'Montserrat', 'Noto Sans Devanagari', sans-serif;
+    font-family: 'Montserrat', 'Amita', sans-serif;
     background-color: var(--paper);
     color: var(--text-main);
     overflow: hidden; /* Handled by layout */
@@ -455,7 +455,7 @@ body.lang-hi .en { display: none !important; }
     background: rgba(197, 160, 89, 0.05);
 }
 .choose-btn:hover { background: var(--gold); color: var(--primary-dark); transform: translateY(-5px); box-shadow: 0 15px 30px rgba(197, 160, 89, 0.2); }
-.choose-btn .hi { font-size: 0.8rem; font-family: 'Noto Sans Devanagari', sans-serif; font-weight: bold; }
+.choose-btn .hi { font-size: 0.9rem; font-family: 'Amita', serif; font-weight: bold; }
 
 /* Direct Entrance UI (Mandala) */
 .direct-entrance { display: flex; flex-direction: column; align-items: center; }
