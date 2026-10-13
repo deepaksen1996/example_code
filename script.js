@@ -30,6 +30,19 @@ document.addEventListener("DOMContentLoaded", () => {
         const heroNamesHi = document.querySelector('.hero .names .hi');
         if (heroNamesEn) heroNamesEn.innerHTML = `Asmita <span class="amp">&</span> Raja`;
         if (heroNamesHi) heroNamesHi.innerHTML = `अस्मिता <span class="amp">और</span> राजा`;
+        
+        // Simplify RSVP form for Bride's side (Ajmer only)
+        const destinationSelect = document.getElementById('rsvp-destination');
+        const travelDetails = document.getElementById('travel-details');
+        if (destinationSelect) {
+            // Force value to ajmer and hide the dropdown
+            destinationSelect.value = 'ajmer';
+            destinationSelect.closest('.input-group').style.display = 'none';
+        }
+        if (travelDetails) {
+            // Hide travel details entirely
+            travelDetails.style.display = 'none';
+        }
     }
 });
 
@@ -207,6 +220,7 @@ attendanceSelect.addEventListener('change', (e) => {
 });
 
 destinationSelect.addEventListener('change', (e) => {
+    if (currentPath.endsWith('/asmita')) return; // Disabled for Bride's side
     if (e.target.value === 'ajmer' || e.target.value === 'both') {
         travelDetails.classList.add('show');
     } else {
