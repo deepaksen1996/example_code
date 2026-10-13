@@ -1,5 +1,21 @@
 // --- Advanced Layout Interactions ---
 
+// --- Routing Logic (/raja and /asmita) ---
+const currentPath = window.location.pathname.replace(/\/$/, "");
+document.addEventListener("DOMContentLoaded", () => {
+    const heroSection = document.querySelector('.hero');
+    const sideBadge = document.createElement('div');
+    sideBadge.style.cssText = "font-family: 'Cinzel', serif; color: var(--gold); margin-bottom: 10px; font-size: 1.1rem; letter-spacing: 2px; text-transform: uppercase;";
+    
+    if (currentPath.endsWith('/raja')) {
+        sideBadge.innerHTML = `<span class="en">✨ Groom's Side ✨</span><span class="hi">✨ वर पक्ष ✨</span>`;
+        heroSection.insertBefore(sideBadge, heroSection.firstChild);
+    } else if (currentPath.endsWith('/asmita')) {
+        sideBadge.innerHTML = `<span class="en">✨ Bride's Side ✨</span><span class="hi">✨ वधू पक्ष ✨</span>`;
+        heroSection.insertBefore(sideBadge, heroSection.firstChild);
+    }
+});
+
 // Language Toggle Logic
 const langToggleBtn = document.getElementById('lang-toggle');
 let currentLang = 'en';
@@ -25,6 +41,7 @@ let isAudioPlaying = false;
 
 // Attempt to play audio
 function playAudio() {
+    bgMusic.volume = 0.2; // Set volume low
     bgMusic.play().then(() => {
         isAudioPlaying = true;
         audioToggleBtn.innerText = '🔊';

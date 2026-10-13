@@ -1,0 +1,12 @@
+{
+  "rewrites": [
+    {
+      "source": "/raja",
+      "destination": "/index.html"
+    },
+    {
+      "source": "/asmita",
+      "destination": "/index.html"
+    }
+  ]
+}
