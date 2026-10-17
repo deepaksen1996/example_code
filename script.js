@@ -9,6 +9,12 @@ document.addEventListener("DOMContentLoaded", () => {
     if (currentPath.endsWith('/raja')) {
         sideBadge.innerHTML = `<span class="en">✨ Groom's Side ✨</span><span class="hi">✨ वर पक्ष ✨</span>`;
         heroSection.insertBefore(sideBadge, heroSection.firstChild);
+        
+        // Hide Bride's Ajmer Reception for Groom side
+        const brideReception = document.getElementById('bride-reception');
+        if (brideReception) {
+            brideReception.style.display = 'none';
+        }
     } else if (currentPath.endsWith('/asmita')) {
         sideBadge.innerHTML = `<span class="en">✨ Bride's Side ✨</span><span class="hi">✨ वधू पक्ष ✨</span>`;
         heroSection.insertBefore(sideBadge, heroSection.firstChild);
