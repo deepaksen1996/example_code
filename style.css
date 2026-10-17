@@ -548,13 +548,11 @@ body.lang-hi .en { display: none !important; }
 @media (max-width: 900px) {
     body { overflow-y: auto; overflow-x: hidden; }
     .split-layout { flex-direction: column; height: auto; overflow: visible; }
-    .krishna-panel { flex: none; height: 50vh; min-height: 400px; width: 100%; border-radius: 0 0 30px 30px; box-shadow: 0 10px 20px rgba(0,0,0,0.1); z-index: 10; position: relative;}
-    .divine-collage { height: 50%; margin-top: 30px; }
-    .collage-bg { width: 45%; left: 15%; top: -5%; }
-    .collage-fg { width: 40%; right: 15%; bottom: -15%; }
-    .collage-text-top { top: 15px; font-size: 0.95rem; }
-    .collage-text-bottom { bottom: 10px; }
-    .shlok-text { font-size: 0.85rem; line-height: 1.4; }
+    .krishna-panel { flex: none; height: 50vh; min-height: 420px; width: 100%; border-radius: 0 0 30px 30px; box-shadow: 0 10px 20px rgba(0,0,0,0.1); z-index: 10; position: relative;}
+    
+    .krishna-wrapper { width: 48%; max-width: 220px; margin-top: -20px; }
+    .krishna-text { bottom: 35px; font-size: 0.95rem; letter-spacing: 2px; }
+    .shlok-text { bottom: 25px; font-size: 0.85rem; line-height: 1.5; letter-spacing: 1px; }
     
     .content-panel { flex: none; width: 100%; overflow: visible; }
     .content-inner { padding: 40px 15px; }
