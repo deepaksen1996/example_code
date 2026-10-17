@@ -28,8 +28,8 @@ document.addEventListener("DOMContentLoaded", () => {
         // Swap names so Bride's name is first
         const heroNamesEn = document.querySelector('.hero .names .en');
         const heroNamesHi = document.querySelector('.hero .names .hi');
-        if (heroNamesEn) heroNamesEn.innerHTML = `Asmita <span class="amp">&</span> Raja`;
-        if (heroNamesHi) heroNamesHi.innerHTML = `अस्मिता <span class="amp">और</span> राजा`;
+        if (heroNamesEn) heroNamesEn.innerHTML = `Asmita <span class="amp">&</span> Raja <span class="real-name">(Deepak)</span>`;
+        if (heroNamesHi) heroNamesHi.innerHTML = `अस्मिता <span class="amp">और</span> राजा <span class="real-name">(दीपक)</span>`;
         
         // Simplify RSVP form for Bride's side (Ajmer only)
         const destinationSelect = document.getElementById('rsvp-destination');

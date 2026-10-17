@@ -237,6 +237,17 @@ body.lang-hi .en { display: none !important; }
     margin-bottom: 20px;
 }
 .names .amp { font-family: 'Cinzel', serif; font-size: 3rem; color: var(--gold); }
+.real-name {
+    font-family: 'Cinzel', serif;
+    font-size: 0.35em;
+    color: var(--text-muted);
+    vertical-align: middle;
+    margin: 0 8px;
+    letter-spacing: 1px;
+}
+.hi .real-name {
+    font-family: 'Montserrat', sans-serif;
+}
 .side-badge {
     font-family: 'Cinzel', serif;
     color: var(--gold);
@@ -533,7 +544,7 @@ body.lang-hi .en { display: none !important; }
     body { overflow-y: auto; overflow-x: hidden; }
     .split-layout { flex-direction: column; height: auto; overflow: visible; }
     .krishna-panel { flex: none; height: 50vh; min-height: 400px; width: 100%; border-radius: 0 0 30px 30px; box-shadow: 0 10px 20px rgba(0,0,0,0.1); z-index: 10; position: relative;}
-    .krishna-wrapper { width: 55%; margin-top: -30px; }
+    .krishna-wrapper { width: 55%; margin-top: 15px; }
     .krishna-text { position: relative; bottom: auto; margin-top: 20px; font-size: 1rem; }
     
     .content-panel { flex: none; width: 100%; overflow: visible; }
