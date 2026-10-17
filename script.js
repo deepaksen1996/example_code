@@ -309,3 +309,14 @@ rsvpForm.addEventListener('submit', (e) => {
             alert('There was an error submitting your RSVP. Please check your connection and try again.');
         });
 });
+
+// Cinematic Image Slider Logic
+const slides = document.querySelectorAll('.cinematic-slide');
+if (slides.length > 0) {
+    let currentSlide = 0;
+    setInterval(() => {
+        slides[currentSlide].classList.remove('active');
+        currentSlide = (currentSlide + 1) % slides.length;
+        slides[currentSlide].classList.add('active');
+    }, 6000); // 6 seconds per slide for a slow Ken Burns effect
+}
