@@ -24,6 +24,12 @@ document.addEventListener("DOMContentLoaded", () => {
         if (ajmerArrival) {
             ajmerArrival.style.display = 'none';
         }
+
+        // Hide Reception Event for Bride's side
+        const receptionEvent = document.getElementById('reception-event');
+        if (receptionEvent) {
+            receptionEvent.style.display = 'none';
+        }
         
         // Swap names so Bride's name is first
         const heroNamesEn = document.querySelector('.hero .names .en');
